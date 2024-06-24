@@ -29,7 +29,7 @@ export const store = configureStore({
     }),
 });
 
-
+//Se exporta el persistor
 export const persistor = persistStore(store);
 
 // Función para seleccionar el estado del usuario

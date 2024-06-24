@@ -36,10 +36,12 @@ export const loginUser = createAsyncThunk(
   }
 );
 
+// Slice de Redux para el manejo del usuario
 const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
+    // Acción para el logout del usuario
     logout(state) {
       state.email = null;
       state.password = null;
@@ -49,7 +51,9 @@ const userSlice = createSlice({
       state.error = null;
     },
   },
+  // Reducers para manejar el estado de carga y error
   extraReducers: (builder) => {
+    // Reducers para el estado de carga y error al iniciar sesión
     builder
       .addCase(loginUser.pending, (state) => {
         state.loading = true;

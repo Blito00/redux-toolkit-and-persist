@@ -20,6 +20,7 @@ const rootReducer = combineReducers({
 // Reducer persistente que utiliza redux-persist para persistir el estado del usuario en el dispositivo
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
+// Store principal que utiliza redux-persist para persistir el estado del usuario en el dispositivo
 export const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
@@ -27,6 +28,7 @@ export const store = configureStore({
       serializableCheck: false, // Necesario para evitar problemas con redux-persist
     }),
 });
+
 
 export const persistor = persistStore(store);
 

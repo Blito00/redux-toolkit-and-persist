@@ -18,7 +18,7 @@ const UserScreen = ({ }) => {
     useEffect(() => {
         // Aquí usaremos el estado de autenticación para redireccionar
         if (!user.loggedIn) {
-            // Redireccionamos a la pantalla de login
+            //Agregar acciones si no esta logueado
         }
     }, [user.loggedIn]);
 
@@ -33,7 +33,6 @@ const UserScreen = ({ }) => {
                     </Button>
                 </View>
             ) : (
-
                 <>
                     <Text style={styles.text}>No estás logueado</Text>
                     <Button mode="contained" onPress={() => router.push('')}>
